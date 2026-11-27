@@ -16,6 +16,7 @@ var version = "dev"
 
 const (
 	exitOK    = 0
+	exitFail  = 1
 	exitUsage = 2
 )
 
@@ -28,6 +29,7 @@ type command struct {
 
 var commands = []command{
 	{name: "version", summary: "print the htask version", run: runVersion},
+	{name: "actions lint", summary: "report PR / issue references in ACTIONS.md that are not links", run: runActionsLint},
 }
 
 func main() {
